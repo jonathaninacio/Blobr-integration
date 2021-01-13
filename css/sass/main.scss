@@ -39,7 +39,7 @@ body{
 		display: block;
 		.statistics-title{
 			font-size: 2.6rem;
-			font-weight: 800;
+			font-weight: 700;
 			padding: 20px 50px;
 		}
 		.datefilter-container{
@@ -49,7 +49,7 @@ body{
 			border-bottom: solid 1px #EBEBEB;
 			.timescale{
 				float: right;
-				margin: 50px 30px 0px 30px;
+				margin: 50px 40px 0px 0px;
 				.timescale-button{
 					font-family: 'Inter', sans-serif;
 					font-weight: 500;
@@ -83,9 +83,9 @@ body{
 		left: 50%;
 		transform: translate(-50%,0);
 		.month-container{
-			display: block;
-			max-width: 75vw;
-			margin: 20px;
+			display: flex;
+			max-width: 80vw;
+			margin: 20px 38px;
 			.month-flex{
 				display: flex;
 				overflow:auto;
@@ -123,8 +123,42 @@ body{
 					}
 				}
 			}
+			.month-arrow{
+				padding: 0px 15px;
+				border: solid 1px #ebebeb;
+				background-color: #fff;
+				outline:none;
+				color: #4D4D4D;
+				font-family: 'Inter', sans-serif;
+				font-weight: 700;
+				font-stretch: 50%;
+				&:hover{
+					background-color: #ebebeb;
+				}
+			}
+			.month-prev-arrow{
+				#prev-arrow{
+					fill:#000;
+				}
+				margin-right: -2px;
+				border-right: 0;
+				border-bottom-left-radius: 8px;
+				border-top-left-radius: 8px;
+			}
+			.month-next-arrow{
+				svg{
+					transform: rotate(180deg);
+					#next-arrow{
+						fill: #B3B3B3;
+					}
+				}
+				z-index: 5;
+				margin-left: -2px;
+				border-left: 0;
+				border-bottom-right-radius: 8px;
+				border-top-right-radius: 8px;
+			}
 		}
 	}
 
 }
-
