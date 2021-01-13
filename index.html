@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+		<title>Blobr Integration</title>
+		<meta name="description" content="" />
+		<link rel="icon" href="favicon.ico" />
+		<link type="text/css" href="css/css/main.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<div class="page-container">
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<button id="dropdown-button" class="sidebar-dropdown" onClick="showPopupMenu();">
+					<div class="sidebar-title">Pearson Specter Litt</div>
+					<div class="sidebar-user">Mike Ross</div>
+					<img class="dropdown-arrow" src="images/angle-down.svg"/>
+				</button>
+				<div class="menu">
+					<button class="menu-entry">
+						<img class="menu-entry-svg" src="images/house.svg"/>
+						<div class="entry">Get started</div>
+					</button>
+					<button class="menu-entry">
+						<img class="menu-entry-svg" src="images/transactions.svg"/>
+						<div class="entry">Transactions</div>
+					</button>
+					<button class="menu-entry menu-entry-selected">
+						<img class="menu-entry-svg" src="images/statistics.svg"/>
+						<div class="entry">Statistics</div>
+					</button>
+					<button class="menu-entry">
+						<img class="menu-entry-svg" src="images/settings.svg"/>
+						<div class="entry">Settings</div>
+					</button>
+					<button class="menu-entry">
+						<img class="menu-entry-svg" src="images/help.svg"/>
+						<div class="entry">Help center</div>
+					</button>
+					<div id="dropdown-menu" class="popup-menu">
+						<button class="popup-menu-entry">
+							<img class="popup-menu-entry-svg" src="images/user.svg"/>
+							<div class="popup-entry">Account settings</div>
+						</button>
+						<button class="popup-menu-entry">
+							<img class="popup-menu-entry-svg" src="images/plus.svg"/>
+							<div class="popup-entry">New organization</div>
+						</button>
+						<button class="popup-menu-entry">
+							<img class="popup-menu-entry-svg" src="images/logout.svg"/>
+							<div class="popup-entry">Log out</div>
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- Statistics -->
+			<div class="statistics-container">
+
+
+				<div class="statistics-title">Statistics</div>
+				<div class="datefilter-container">
+					<div class="timescale">
+						<button class="timescale-button">Days</button>
+						<button class="timescale-button">Weeks</button>
+						<button class="timescale-button timescale-button-selected">Months</button>
+						<button class="timescale-button">Quarters</button>
+						<button class="timescale-button">Years</button>
+						<button class="timescale-button">Custom...</button>
+					</div>
+
+					<div class="scrollbar-container">
+						<div class="month-container">
+							<div id="month-flex-scrollbar" class="month-flex">
+								<tr>
+									<th>
+										<button>
+											<div class="month">
+												January
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												February
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												March
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												April
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												May
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												June
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												July
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												August
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												September
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												October
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												November
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												December
+											</div>
+											<div class="year">
+												2019
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												January
+											</div>
+											<div class="year">
+												2020
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												February
+											</div>
+											<div class="year">
+												2020
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												March
+											</div>
+											<div class="year">
+												2020
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												April
+											</div>
+											<div class="year">
+												2020
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												May
+											</div>
+											<div class="year">
+												2020
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												June
+											</div>
+											<div class="year">
+												2020
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												July
+											</div>
+											<div class="year">
+												2020
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month">
+												August
+											</div>
+											<div class="year">
+												2020
+											</div>
+										</button>
+									</th>
+									<th>
+										<button>
+											<div class="month month-selected">
+												September
+											</div>
+											<div class="year">
+												2020
+											</div>
+										</button>
+									</th>
+								</tr>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<!-- <script language="javascript" type="text/javascript" src="js/jquery-3.3.1.js"></script> -->
+		<script language="javascript" type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
