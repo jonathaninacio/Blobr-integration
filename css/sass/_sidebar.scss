@@ -54,8 +54,7 @@ $sb-menu-selected: #0071F2;
 .page-container{
     .sidebar{
         position: relative;
-        width: 20vw;
-        height: 100%;
+        min-width: 249px;
         background-color:$sb-bg-bottom;
         padding-right: 0;
         outline:none;

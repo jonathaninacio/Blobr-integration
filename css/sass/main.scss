@@ -25,17 +25,16 @@ body{
 }
 
 .page-container{
-	height: 100vh;
 	max-width: 100vw;
 	display: flex;
-	overflow: hidden;
+	overflow-x: hidden;
 
 	// contenu SCSS sidebar ( @import 'sidebar'; )
 	
 	.statistics-container{
 		float: right;
 		height: 100%;
-		width: 100%;
+		min-width: auto;
 		display: block;
 		.statistics-title{
 			font-size: 2.6rem;
@@ -84,7 +83,7 @@ body{
 		transform: translate(-50%,0);
 		.month-container{
 			display: flex;
-			max-width: 80vw;
+			max-width: 1110px;
 			margin: 0px 38px 24px 38px;
 			.month-flex{
 				display: flex;
@@ -162,26 +161,28 @@ body{
 	}
 
 
+	.chart-container{
+		width: 80vw;
+		#month-chart{
+			height: 500px;
+			width: 1190px;
+		}
+	}
 
-	//
-	//   ici graph
-	//
 
 
 	.tri-cards-container{
 		display: block;
 		.tri-cards-title{
 			display: block;
-			width: 100%;
 			font-family: 'Inter', sans-serif;
 			font-weight: 700;
 			font-size: 2.2rem;
 			margin: 40px;
 		}
 		.cards-container{
-			max-width: 80vw;
 			display: flex;
-			margin: auto;
+			margin: 0px 40px;
 			justify-content: space-between;
 			.card-spacer{
 				margin: auto;
@@ -257,9 +258,8 @@ body{
 		}
 		.table-card{
 			border-radius: 8px;
-			width: 80vw;
+			min-width: 1110px;
 			margin: auto;
-			justify-content: space-between;
 			border: solid 1px #EBEBEB;
 			background-color: #FFF;
 			filter : drop-shadow(0px 4px 4px rgba(0,0,0,5%));
@@ -301,8 +301,8 @@ body{
 				&::after{
 					content: "";
 					position: absolute;
-					width: 80vw;
-					transform: translate(-80vw,-5px);
+					min-width: 1110px;
+					transform: translate(-1110px,-5px);
 					border-top: solid 1px #EBEBEB;
 					margin: 3px;
 				}
