@@ -1,379 +1,429 @@
 <!DOCTYPE html>
 <html>
-	<head>
 
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<head>
 
-		<title>Blobr Integration</title>
-		<meta name="description" content="" />
-		<link rel="icon" href="favicon.ico" />
-		<link type="text/css" href="css/css/main.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-	</head>
-	<body>
-		<div class="page-container">
-			<!-- Sidebar -->
-			<div class="sidebar">
-				<button id="dropdown-button" class="sidebar-dropdown" onClick="showPopupMenu();">
-					<div class="sidebar-title">Pearson Specter Litt</div>
-					<div class="sidebar-user">Mike Ross</div>
-					<img class="dropdown-arrow" src="images/angle-down.svg"/>
+	<title>Blobr Integration</title>
+	<meta name="description" content="" />
+	<link rel="icon" href="favicon.ico" />
+	<link type="text/css" href="css/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="page-container">
+		<!-- Sidebar -->
+		<div class="sidebar">
+			<button id="dropdown-button" class="sidebar-dropdown" onClick="showPopupMenu();">
+				<div class="sidebar-title">Pearson Specter Litt</div>
+				<div class="sidebar-user">Mike Ross</div>
+				<img class="dropdown-arrow" src="images/angle-down.svg" />
+			</button>
+			<div class="menu">
+				<button class="menu-entry">
+					<img class="menu-entry-svg" src="images/house.svg" />
+					<div class="entry">Get started</div>
 				</button>
-				<div class="menu">
-					<button class="menu-entry">
-						<img class="menu-entry-svg" src="images/house.svg"/>
-						<div class="entry">Get started</div>
+				<button class="menu-entry">
+					<img class="menu-entry-svg" src="images/transactions.svg" />
+					<div class="entry">Transactions</div>
+				</button>
+				<button class="menu-entry menu-entry-selected">
+					<img class="menu-entry-svg" src="images/statistics.svg" />
+					<div class="entry">Statistics</div>
+				</button>
+				<button class="menu-entry">
+					<img class="menu-entry-svg" src="images/settings.svg" />
+					<div class="entry">Settings</div>
+				</button>
+				<button class="menu-entry">
+					<img class="menu-entry-svg" src="images/help.svg" />
+					<div class="entry">Help center</div>
+				</button>
+				<div id="dropdown-menu" class="popup-menu">
+					<button class="popup-menu-entry">
+						<img class="popup-menu-entry-svg" src="images/user.svg" />
+						<div class="popup-entry">Account settings</div>
 					</button>
-					<button class="menu-entry">
-						<img class="menu-entry-svg" src="images/transactions.svg"/>
-						<div class="entry">Transactions</div>
+					<button class="popup-menu-entry">
+						<img class="popup-menu-entry-svg" src="images/plus.svg" />
+						<div class="popup-entry">New organization</div>
 					</button>
-					<button class="menu-entry menu-entry-selected">
-						<img class="menu-entry-svg" src="images/statistics.svg"/>
-						<div class="entry">Statistics</div>
+					<button class="popup-menu-entry">
+						<img class="popup-menu-entry-svg" src="images/logout.svg" />
+						<div class="popup-entry">Log out</div>
 					</button>
-					<button class="menu-entry">
-						<img class="menu-entry-svg" src="images/settings.svg"/>
-						<div class="entry">Settings</div>
-					</button>
-					<button class="menu-entry">
-						<img class="menu-entry-svg" src="images/help.svg"/>
-						<div class="entry">Help center</div>
-					</button>
-					<div id="dropdown-menu" class="popup-menu">
-						<button class="popup-menu-entry">
-							<img class="popup-menu-entry-svg" src="images/user.svg"/>
-							<div class="popup-entry">Account settings</div>
-						</button>
-						<button class="popup-menu-entry">
-							<img class="popup-menu-entry-svg" src="images/plus.svg"/>
-							<div class="popup-entry">New organization</div>
-						</button>
-						<button class="popup-menu-entry">
-							<img class="popup-menu-entry-svg" src="images/logout.svg"/>
-							<div class="popup-entry">Log out</div>
-						</button>
-					</div>
 				</div>
-			</div>
-			<!-- Statistics -->
-			<div class="statistics-container">
-
-
-				<div class="statistics-title">Statistics</div>
-				<div class="grey-background-container datefilter-container">
-					<div class="timescale">
-						<button class="timescale-button">Days</button>
-						<button class="timescale-button">Weeks</button>
-						<button class="timescale-button timescale-button-selected">Months</button>
-						<button class="timescale-button">Quarters</button>
-						<button class="timescale-button">Years</button>
-						<button class="timescale-button">Custom...</button>
-					</div>
-
-					<div class="scrollbar-container">
-						<div class="month-container">
-							<button onclick="fnprevarrow()" class="month-arrow month-prev-arrow">
-								<svg  width="6" height="10" viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg">
-									<path id="prev-arrow" d="M5.71993 8.37138L2.32057 4.99994L5.71993 1.6285C6.09286 1.25567 6.09286 0.652448 5.71993 0.279621C5.343 -0.0932069 4.73361 -0.0932069 4.35668 0.279621L0.279448 4.32475C-0.0934822 4.69758 -0.0929826 5.3028 0.279947 5.67363L4.35668 9.72075C4.73361 10.0941 5.343 10.0921 5.71993 9.72075C6.09336 9.34743 6.09336 8.74421 5.71993 8.37138Z" fill="black"/>
-								</svg>
-							</button>
-							<div id="month-flex-scrollbar" class="month-flex">
-								<tr>
-									<th>
-										<button>
-											<div class="month">
-												January
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												February
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												March
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												April
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												May
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												June
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												July
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												August
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												September
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												October
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												November
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												December
-											</div>
-											<div class="year">
-												2019
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												January
-											</div>
-											<div class="year">
-												2020
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												February
-											</div>
-											<div class="year">
-												2020
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												March
-											</div>
-											<div class="year">
-												2020
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												April
-											</div>
-											<div class="year">
-												2020
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												May
-											</div>
-											<div class="year">
-												2020
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												June
-											</div>
-											<div class="year">
-												2020
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												July
-											</div>
-											<div class="year">
-												2020
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month">
-												August
-											</div>
-											<div class="year">
-												2020
-											</div>
-										</button>
-									</th>
-									<th>
-										<button>
-											<div class="month month-selected">
-												September
-											</div>
-											<div class="year">
-												2020
-											</div>
-										</button>
-									</th>
-								</tr>
-							</div>
-							<button  onclick="fnnextarrow()" class="month-arrow month-next-arrow">
-								<svg  width="6" height="10" viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg">
-									<path id="next-arrow" d="M5.71993 8.37138L2.32057 4.99994L5.71993 1.6285C6.09286 1.25567 6.09286 0.652448 5.71993 0.279621C5.343 -0.0932069 4.73361 -0.0932069 4.35668 0.279621L0.279448 4.32475C-0.0934822 4.69758 -0.0929826 5.3028 0.279947 5.67363L4.35668 9.72075C4.73361 10.0941 5.343 10.0921 5.71993 9.72075C6.09336 9.34743 6.09336 8.74421 5.71993 8.37138Z" fill="black"/>
-								</svg>
-							</button>
-						</div>
-					</div>
-
-				</div>
-
-
-
-
-
-
-				<div>graph</div>
-
-
-
-
-
-				<div class="grey-background-container">
-					<div class="tri-cards-container">
-						<div class="tri-cards-title">Statistics</div>
-						<div class="cards-container">
-							<div class="card">
-								<div class="card-title">
-									<div class="card-title-title">Revenue</div>
-									<div class="card-title-comment">Transactions</div>
-								</div>
-								<div class="card-numbers">
-									<div class="card-numbers-euros">€5.00</div>
-									<div class="card-numbers-quantity">4</div>
-								</div>
-								<div class="card-compare">Compared to last year</div>
-								<div class="card-total">
-									<div class="card-lastyear-euros">€0.00</div>
-									<div class="card-lastyear-quantity">0</div>
-								</div>
-							</div>
-							<div class="card center-card">
-								<div class="card-title">
-									<div class="card-title-title">Refunds</div>
-									<div class="card-title-comment">Transactions</div>
-								</div>
-								<div class="card-numbers">
-									<div class="card-numbers-euros">€0.00</div>
-									<div class="card-numbers-quantity">0</div>
-								</div>
-								<div class="card-compare">Compared to last year</div>
-								<div class="card-total">
-									<div class="card-lastyear-euros">€0.00</div>
-									<div class="card-lastyear-quantity">0</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card-title">
-									<div class="card-title-title">Chargebacks</div>
-									<div class="card-title-comment">Transactions</div>
-								</div>
-								<div class="card-numbers">
-									<div class="card-numbers-euros">€0.00</div>
-									<div class="card-numbers-quantity">0</div>
-								</div>
-								<div class="card-compare">Compared to last year</div>
-								<div class="card-total">
-									<div class="card-lastyear-euros">€0.00</div>
-									<div class="card-lastyear-quantity">0</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-
-
 			</div>
 		</div>
-		<!-- <script language="javascript" type="text/javascript" src="js/jquery-3.3.1.js"></script> -->
-		<script language="javascript" type="text/javascript" src="js/main.js"></script>
-	</body>
+		<!-- Statistics -->
+		<div class="statistics-container">
+
+
+			<div class="statistics-title">Statistics</div>
+			<div class="grey-background-container datefilter-container">
+				<div class="timescale">
+					<button class="timescale-button">Days</button>
+					<button class="timescale-button">Weeks</button>
+					<button class="timescale-button timescale-button-selected">Months</button>
+					<button class="timescale-button">Quarters</button>
+					<button class="timescale-button">Years</button>
+					<button class="timescale-button">Custom...</button>
+				</div>
+
+				<div class="scrollbar-container">
+					<div class="month-container">
+						<button onclick="fnprevarrow()" class="month-arrow month-prev-arrow">
+							<svg width="6" height="10" viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg">
+								<path id="prev-arrow"
+									d="M5.71993 8.37138L2.32057 4.99994L5.71993 1.6285C6.09286 1.25567 6.09286 0.652448 5.71993 0.279621C5.343 -0.0932069 4.73361 -0.0932069 4.35668 0.279621L0.279448 4.32475C-0.0934822 4.69758 -0.0929826 5.3028 0.279947 5.67363L4.35668 9.72075C4.73361 10.0941 5.343 10.0921 5.71993 9.72075C6.09336 9.34743 6.09336 8.74421 5.71993 8.37138Z"
+									fill="black" />
+							</svg>
+						</button>
+						<div id="month-flex-scrollbar" class="month-flex">
+							<tr>
+								<th>
+									<button>
+										<div class="month">
+											January
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											February
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											March
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											April
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											May
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											June
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											July
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											August
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											September
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											October
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											November
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											December
+										</div>
+										<div class="year">
+											2019
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											January
+										</div>
+										<div class="year">
+											2020
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											February
+										</div>
+										<div class="year">
+											2020
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											March
+										</div>
+										<div class="year">
+											2020
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											April
+										</div>
+										<div class="year">
+											2020
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											May
+										</div>
+										<div class="year">
+											2020
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											June
+										</div>
+										<div class="year">
+											2020
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											July
+										</div>
+										<div class="year">
+											2020
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month">
+											August
+										</div>
+										<div class="year">
+											2020
+										</div>
+									</button>
+								</th>
+								<th>
+									<button>
+										<div class="month month-selected">
+											September
+										</div>
+										<div class="year">
+											2020
+										</div>
+									</button>
+								</th>
+							</tr>
+						</div>
+						<button onclick="fnnextarrow()" class="month-arrow month-next-arrow">
+							<svg width="6" height="10" viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg">
+								<path id="next-arrow"
+									d="M5.71993 8.37138L2.32057 4.99994L5.71993 1.6285C6.09286 1.25567 6.09286 0.652448 5.71993 0.279621C5.343 -0.0932069 4.73361 -0.0932069 4.35668 0.279621L0.279448 4.32475C-0.0934822 4.69758 -0.0929826 5.3028 0.279947 5.67363L4.35668 9.72075C4.73361 10.0941 5.343 10.0921 5.71993 9.72075C6.09336 9.34743 6.09336 8.74421 5.71993 8.37138Z"
+									fill="black" />
+							</svg>
+						</button>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+
+
+			<div>graph</div>
+
+
+
+
+
+			<div class="grey-background-container">
+				<div class="tri-cards-container">
+					<div class="tri-cards-title">Statistics</div>
+					<div class="cards-container">
+						<div class="card">
+							<div class="card-title">
+								<div class="card-title-title">Revenue</div>
+								<div class="card-title-comment">Transactions</div>
+							</div>
+							<div class="card-numbers">
+								<div class="card-numbers-euros">€5.00</div>
+								<div class="card-numbers-quantity">4</div>
+							</div>
+							<div class="card-compare">Compared to last year</div>
+							<div class="card-total">
+								<div class="card-lastyear">€0.00</div>
+								<div class="card-lastyear">0</div>
+							</div>
+						</div>
+						<div class="card center-card">
+							<div class="card-title">
+								<div class="card-title-title">Refunds</div>
+								<div class="card-title-comment">Transactions</div>
+							</div>
+							<div class="card-numbers">
+								<div class="card-numbers-euros">€0.00</div>
+								<div class="card-numbers-quantity">0</div>
+							</div>
+							<div class="card-compare">Compared to last year</div>
+							<div class="card-total">
+								<div class="card-lastyear">€0.00</div>
+								<div class="card-lastyear">0</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-title">
+								<div class="card-title-title">Chargebacks</div>
+								<div class="card-title-comment">Transactions</div>
+							</div>
+							<div class="card-numbers">
+								<div class="card-numbers-euros">€0.00</div>
+								<div class="card-numbers-quantity">0</div>
+							</div>
+							<div class="card-compare">Compared to last year</div>
+							<div class="card-total">
+								<div class="card-lastyear">€0.00</div>
+								<div class="card-lastyear">0</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-card-container">
+					<div class="table-card-title">Per day</div>
+					<table class="table-card">
+						<tr class="first-line">
+							<td class="date">Date</td>
+							<td class="title">Revenue</td>
+							<td class="transactions">Transactions</td>
+							<td class="title">Refunds</td>
+							<td class="transactions">Transactions</td>
+							<td class="title">Chargebacks</td>
+							<td class="transactions">Transactions</td>
+						</tr>
+						<tr class="new-line">
+							<td class="new-date">Tue, 1 Sep 2020</td>
+							<td class="revenue">€2.00</td>
+							<td class="transactions">1</td>
+							<td class="new-revenue">€0.00</td>
+							<td class="transactions">0</td>
+							<td class="new-revenue">€0.00</td>
+							<td class="transactions">0</td>
+						</tr>
+						<tr class="new-line">
+							<td class="new-date">Wed, 2 Sep 2020</td>
+							<td class="revenue">€1.00</td>
+							<td class="transactions">1</td>
+							<td class="new-revenue">€0.00</td>
+							<td class="transactions">0</td>
+							<td class="new-revenue">€0.00</td>
+							<td class="transactions">0</td>
+						</tr>
+						<tr class="new-line">
+							<td class="new-date">Thu, 3 Sep 2020</td>
+							<td class="revenue">€3.00</td>
+							<td class="transactions">2</td>
+							<td class="new-revenue">€0.00</td>
+							<td class="transactions">0</td>
+							<td class="new-revenue">€0.00</td>
+							<td class="transactions">0</td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+	</div>
+	<!-- <script language="javascript" type="text/javascript" src="js/jquery-3.3.1.js"></script> -->
+	<script language="javascript" type="text/javascript" src="js/main.js"></script>
+</body>
+
 </html>

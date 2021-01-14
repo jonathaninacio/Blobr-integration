@@ -183,15 +183,12 @@ body{
 			display: flex;
 			margin: auto;
 			justify-content: space-between;
-			font-family: 'Inter', sans-serif;
 			.card-spacer{
 				margin: auto;
 			}
 			.card{
 				display: inline-block;
-				//margin: 0px 15px;
 				border-radius: 8px;
-				box-sizing: border-box;
 				width:350px;
 				border: solid 1px #EBEBEB;
 				background-color: #FFF;
@@ -203,15 +200,13 @@ body{
 					.card-title-title{
 						color: #000;
 						margin: 8px 16px;
-						font-size:1.6rem;
-						font-weight: 700;
+						font: 700 1.6rem 'Inter', sans-serif;
 					}
 					.card-title-comment{
 						color: #b3b3b3;
 						margin-top: 10px;
 						margin-right: 16px;
-						font-size:1.2rem;
-						font-weight: 400;
+						font: 400 1.2rem 'Inter', sans-serif;
 					}
 				}
 
@@ -223,19 +218,94 @@ body{
 					.card-numbers-euros{
 						color: #000;
 						margin: 16px;
-						font-size:2.4rem;
-						font-weight: 700;
+						font: 700 2.4rem 'Inter', sans-serif;
 					}
 					.card-numbers-quantity{
 						color: #000;
 						margin: 16px 15px;
-						font-size: 2.4rem;
-						font-weight: 400;
+						font: 400 2.4rem 'Inter', sans-serif;
 					}
+				}
+
+				.card-compare{
+					color: #000;
+					margin: 8px 16px 10px 16px;
+					font: 700 1.6rem 'Inter', sans-serif;
 				}
 			}
 			.center-card{
 				margin: 0 30px;
+			}
+			.card-total{
+				display: flex;
+				justify-content: space-between;
+				.card-lastyear{
+					color: #B3B3B3;
+					margin: 0px 16px 16px 16px;
+					font: 400 1.2rem 'Inter', sans-serif;
+				}
+			}
+		}
+	}
+
+	.table-card-container{
+		margin-bottom: 40px;
+		.table-card-title{
+			color: #000;
+			margin: 40px;
+			font: 700 2.2rem 'Inter', sans-serif;
+		}
+		.table-card{
+			border-radius: 8px;
+			width: 80vw;
+			margin: auto;
+			justify-content: space-between;
+			border: solid 1px #EBEBEB;
+			background-color: #FFF;
+			filter : drop-shadow(0px 4px 4px rgba(0,0,0,5%));
+			.first-line{
+				.date{
+					padding:16px;
+					font: 700 1.4rem 'Inter', sans-serif;
+				}
+				.title{
+					text-align: right;
+					font: 700 1.4rem 'Inter', sans-serif;
+				}
+				.transactions{
+					text-align: center;
+					padding-right: 80px;
+					font: 400 1.2rem 'Inter', sans-serif;
+				}
+			}
+			.new-line{
+
+				.new-date{
+					padding:16px;
+					font: 400 1.4rem 'Inter', sans-serif;
+				}
+				.revenue{
+					text-align: right;
+					font: 700 1.4rem 'Inter', sans-serif;
+				}
+				.new-revenue{
+					text-align: right;
+					font: 400 1.4rem 'Inter', sans-serif;
+				}
+				.transactions{
+					color: #b3b3b3;
+					text-align: center;
+					padding-right: 80px;
+					font: 400 1.2rem 'Inter', sans-serif;
+				}
+				&::after{
+					content: "";
+					position: absolute;
+					width: 80vw;
+					transform: translate(-80vw,-5px);
+					border-top: solid 1px #EBEBEB;
+					margin: 3px;
+				}
 			}
 		}
 	}
