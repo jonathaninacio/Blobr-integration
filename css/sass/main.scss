@@ -40,16 +40,16 @@ body{
 		.statistics-title{
 			font-size: 2.6rem;
 			font-weight: 700;
-			padding: 20px 50px;
+			margin: 24px 40px;
 		}
-		.datefilter-container{
+		.grey-background-container{
 			display: block;
 			background-color: #FBFBFB;
 			border-top: solid 1px #EBEBEB;
 			border-bottom: solid 1px #EBEBEB;
 			.timescale{
 				float: right;
-				margin: 50px 40px 0px 0px;
+				margin: 40px 40px 24px 0;
 				.timescale-button{
 					font-family: 'Inter', sans-serif;
 					font-weight: 500;
@@ -85,7 +85,7 @@ body{
 		.month-container{
 			display: flex;
 			max-width: 80vw;
-			margin: 20px 38px;
+			margin: 0px 38px 24px 38px;
 			.month-flex{
 				display: flex;
 				overflow:auto;
@@ -161,4 +161,84 @@ body{
 		}
 	}
 
+
+
+	//
+	//   ici graph
+	//
+
+
+	.tri-cards-container{
+		display: block;
+		.tri-cards-title{
+			display: block;
+			width: 100%;
+			font-family: 'Inter', sans-serif;
+			font-weight: 700;
+			font-size: 2.2rem;
+			margin: 40px;
+		}
+		.cards-container{
+			max-width: 80vw;
+			display: flex;
+			margin: auto;
+			justify-content: space-between;
+			font-family: 'Inter', sans-serif;
+			.card-spacer{
+				margin: auto;
+			}
+			.card{
+				display: inline-block;
+				//margin: 0px 15px;
+				border-radius: 8px;
+				box-sizing: border-box;
+				width:350px;
+				border: solid 1px #EBEBEB;
+				background-color: #FFF;
+				filter : drop-shadow(0px 4px 4px rgba(0,0,0,5%));
+
+				.card-title{
+					display: flex;
+					justify-content: space-between;
+					.card-title-title{
+						color: #000;
+						margin: 8px 16px;
+						font-size:1.6rem;
+						font-weight: 700;
+					}
+					.card-title-comment{
+						color: #b3b3b3;
+						margin-top: 10px;
+						margin-right: 16px;
+						font-size:1.2rem;
+						font-weight: 400;
+					}
+				}
+
+				.card-numbers{
+					display: flex;
+					justify-content: space-between;
+					border-top: solid 1px #ebebeb;
+					border-bottom: solid 1px #ebebeb;
+					.card-numbers-euros{
+						color: #000;
+						margin: 16px;
+						font-size:2.4rem;
+						font-weight: 700;
+					}
+					.card-numbers-quantity{
+						color: #000;
+						margin: 16px 15px;
+						font-size: 2.4rem;
+						font-weight: 400;
+					}
+				}
+			}
+			.center-card{
+				margin: 0 30px;
+			}
+		}
+	}
+
 }
+
