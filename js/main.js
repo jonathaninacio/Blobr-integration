@@ -58,78 +58,43 @@ function changeScrollDelta(event){
 monthFlexScrollbar.addEventListener("wheel", changeScrollDelta, {passive: true});
 
 
-//chart using chartJs
+// chartist chart creation
+var data = {
+    labels: ['','Tue\n01 Sep', '', 'Wed\n03 Sep', '', 'Sat\n05 Sep','','Mon\n07 Sep','','Wed\n09 Sep',''
+            ,'Fri\n11 Sep','','Sun\n13 Sep','','Tue\n15 Sep','','Thu\n17 Sep','','Sat\n19 Sep','','Mon\n21 Sep',''
+            ,'Wed\n23 Sep','','Fri\n25 Sep','','Sun\n27 Sep','','Tue\n29 Sep',''],
+    series: [
+      [null,2, 1, 3]
+    ]
+  };
 
-var myChart = new Chart(document.getElementById('month-chart').getContext('2d'), {
-    type: 'line',
-    data: {
-        labels: ['Tue 01 Sep','', 'Thu 03 Sep','', 'Sat 05 Sep','',],
-        datasets: [{
-            label: 'Current period (September 2020)',
-            lineTension:0,
-            data: [2, 1, 3, null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-            backgroundColor: 'rgba(0,0,0,0)',
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
+  var options = {
+    width: "1050px",
+    height: "370px",
+    low: 0,
+    high: 4,
+    lineSmooth:false,
+    axisY: {
+        onlyInteger: true,
+        labelInterpolationFnc: function(value) {
+            return '€ '+ value },
     },
-    defaults:{
-        global:{
-            hover:{
-                animationDuration:'200'
-            }
-        }
-    },
-    options: {
-        layout:{
-            padding: {
-                left: 100,
-                right: 40,
-                top: 40,
-                bottom: 40
-            }
-        },
-        responsive:false,
-        maintainAspectRatio:false,
-        animation:{
-            duration:0
-        },
-        tooltips:{
+  };
 
-        },
-        scales: {
-            yAxes: [{
-                gridLines:{
-                    color:'rgba(235, 235, 235, 1)',
-                },
-                ticks: {
-                    max: 4,
-                    stepSize:1,
-                    beginAtZero: true,
-                }
-            }],
-            xAxes: [{
-                gridLines:{
-                    color:'rgba(0,0,0,0)',
-                },
-                ticks: {
-                    beginAtZero: true,
-                }
-            }]
-        }
-    },
-    canvas:{
-        parentNode:{
-            style:{
-                height:'500px',
-            }
-        }
+  var chart = new Chartist.Line('.ct-chart', data, options);
+
+  // replace point by circles
+  chart.on('draw', function(data) {
+    if(data.type === 'point') {
+    var pastille = new Chartist.Svg('circle', {
+        d: ['M',
+          data.x,
+          data.y - 15].join(' '),
+        cx: data.x,
+        cy: data.y,
+        r: '5',
+        style: 'stroke-width:2px; fill-opacity: 1'
+    }, 'ct-area');
+      data.element.replace(pastille);
     }
-});
+  });

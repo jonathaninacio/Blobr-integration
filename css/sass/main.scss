@@ -163,10 +163,45 @@ body{
 
 	.chart-container{
 		width: 80vw;
-		#month-chart{
-			height: 500px;
-			width: 1190px;
+		.ct-chart-line{
+			margin: 0px 40px 0px 100px;
 		}
+		.ct-perfect-fourth{
+			max-width: 1110px;
+			height: 380px;
+			.ct-grid{
+				stroke: #EBEBEB;
+				stroke-dasharray: none;
+			}
+		}
+		.ct-horizontal{
+			opacity: 0;	
+		}
+		.ct-end{
+			opacity: 1;
+		}
+		.ct-label.ct-horizontal.ct-end{
+			text-align: center;	
+		}
+		.ct-label.ct-vertical.ct-start{
+			text-align: center;	
+			transform: translate(0px,10px);
+		}
+		.ct-series-a .ct-point{
+			stroke: #0071F2;
+		}
+		.ct-series-a .ct-line{
+			stroke: #0071F2;
+			stroke-width:1px;
+		}
+		.ct-area{
+			stroke:#0071F2;
+			fill:#fff;
+			&:hover{
+				fill:#0071F2;
+			}
+		}
+		
 	}
 
 
