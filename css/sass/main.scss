@@ -161,14 +161,65 @@ body{
 	}
 
 
+	.chart-curve-container{
+		display: flex;
+		.current{
+			margin: 40px;
+			display: flex;
+			.current-dot{
+				width: 14px;
+				height: 14px;
+				margin: 0px 6px;
+				display: block;
+				border-radius: 50%;
+				border:solid 1px #0071F2;
+			}
+			.current-title{
+				font: 400 1.4rem 'Inter', sans-serif;
+				color: #0071F2;
+			}
+			.current-description{
+				margin: 0px 6px;
+				font: 400 1.4rem 'Inter', sans-serif;
+				color: #b3b3b3;
+			}
+		}
+		.previous{
+			margin: 40px;
+			display: flex;
+			.previous-dot{
+				width: 14px;
+				height: 14px;
+				margin: 0px 6px;
+				display: block;
+				border-radius: 50%;
+				border:solid 1px #59BBFF;
+			}
+			.previous-title{
+				font: 400 1.4rem 'Inter', sans-serif;
+				color: #59BBFF;
+			}
+			.previous-description{
+				margin: 0px 6px;
+				font: 400 1.4rem 'Inter', sans-serif;
+				color: #b3b3b3;
+			}
+		}
+	}
+
+
 	.chart-container{
-		width: 80vw;
+		display: flex;
+		max-width: 1110px;
+		margin: auto;
 		.ct-chart-line{
-			margin: 0px 40px 0px 100px;
+
+			overflow: visible;
+			margin: 0px 40px 40px 60px;
 		}
 		.ct-perfect-fourth{
 			max-width: 1110px;
-			height: 380px;
+			height: 420px;
 			.ct-grid{
 				stroke: #EBEBEB;
 				stroke-dasharray: none;
@@ -180,12 +231,22 @@ body{
 		.ct-end{
 			opacity: 1;
 		}
-		.ct-label.ct-horizontal.ct-end{
+		.ct-label.ct-horizontal.ct-end:nth-child(even){
+			display: none;
+		}
+		.ct-label.ct-horizontal.ct-end:nth-child(1n){
+			width: 50px!important;
+			margin-top: 5px;
 			text-align: center;	
+			font: 400 1.2rem 'Inter', sans-serif;
+			color: #000;
+			transform: translate(-45%,0);
 		}
 		.ct-label.ct-vertical.ct-start{
 			text-align: center;	
 			transform: translate(0px,10px);
+			font: 400 1.2rem 'Inter', sans-serif;
+			color: #000;
 		}
 		.ct-series-a .ct-point{
 			stroke: #0071F2;
@@ -199,6 +260,31 @@ body{
 			fill:#fff;
 			&:hover{
 				fill:#0071F2;
+			}
+		}
+		.ct-series-b{
+			.ct-line{
+				z-index: 10;
+				stroke-width: 1px;
+				stroke: #0071F2;
+			}
+			.ct-area{
+				display: none;
+			}
+		}
+		.ct-series-c{
+			.ct-line{
+				z-index: 10;
+				stroke-width: 1px;
+				stroke: #59BBFF;
+				stroke-dasharray:4;
+			}
+			.ct-area:nth-child(2){
+				display: none;
+			}
+			.ct-area{
+				stroke:#59BBFF;
+				fill:#fff;
 			}
 		}
 		

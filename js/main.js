@@ -60,15 +60,59 @@ monthFlexScrollbar.addEventListener("wheel", changeScrollDelta, {passive: true})
 
 // chartist chart creation
 var data = {
-    labels: ['','Tue\n01 Sep', '', 'Wed\n03 Sep', '', 'Sat\n05 Sep','','Mon\n07 Sep','','Wed\n09 Sep',''
+    labels: ['','Tue\n01 Sep', '', 'Thu\n03 Sep', '', 'Sat\n05 Sep','','Mon\n07 Sep','','Wed\n09 Sep',''
             ,'Fri\n11 Sep','','Sun\n13 Sep','','Tue\n15 Sep','','Thu\n17 Sep','','Sat\n19 Sep','','Mon\n21 Sep',''
-            ,'Wed\n23 Sep','','Fri\n25 Sep','','Sun\n27 Sep','','Tue\n29 Sep',''],
+            ,'Wed\n23 Sep','','Fri\n25 Sep','','Sun\n27 Sep','','Tue\n29 Sep'],
     series: [
-      [null,2, 1, 3]
+      [
+          {value:null},
+          {value:2}, 
+          {value:1}, 
+          {value:3},
+        ],
+    [
+        {value:0},
+        {value:0}, 
+        {value:0}, 
+        {value:0},
+      ],
+      [
+        {value:null},
+        {value:null}, 
+        {value:null}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}, 
+        {value:0}
     ]
-  };
+    ]
+};
 
-  var options = {
+var options = {
     width: "1050px",
     height: "370px",
     low: 0,
@@ -77,14 +121,14 @@ var data = {
     axisY: {
         onlyInteger: true,
         labelInterpolationFnc: function(value) {
-            return '€ '+ value },
+            return '€'+ value },
     },
-  };
+};
 
-  var chart = new Chartist.Line('.ct-chart', data, options);
+var chart = new Chartist.Line('.ct-chart', data, options);
 
-  // replace point by circles
-  chart.on('draw', function(data) {
+// replace point by circles
+chart.on('draw', function(data) {
     if(data.type === 'point') {
     var pastille = new Chartist.Svg('circle', {
         d: ['M',
@@ -92,9 +136,11 @@ var data = {
           data.y - 15].join(' '),
         cx: data.x,
         cy: data.y,
-        r: '5',
-        style: 'stroke-width:2px; fill-opacity: 1'
+        r: '4',
+        style: 'stroke-width:2px; fill-opacity: 1',
+        id: Math.floor(data.x) + '-' + Math.floor(data.y) + 'point',
     }, 'ct-area');
       data.element.replace(pastille);
     }
-  });
+});
+
