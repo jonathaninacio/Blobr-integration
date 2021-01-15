@@ -1,0 +1,45 @@
+.chart-curve-container{
+    display: flex;
+    .current{
+        margin: 40px;
+        display: flex;
+        .current-dot{
+            width: 14px;
+            height: 14px;
+            margin: 0px 6px;
+            display: block;
+            border-radius: 50%;
+            border:solid 1px #0071F2;
+        }
+        .current-title{
+            font: 400 1.4rem 'Inter', sans-serif;
+            color: #0071F2;
+        }
+        .current-description{
+            margin: 0px 6px;
+            font: 400 1.4rem 'Inter', sans-serif;
+            color: #b3b3b3;
+        }
+    }
+    .previous{
+        margin: 40px;
+        display: flex;
+        .previous-dot{
+            width: 14px;
+            height: 14px;
+            margin: 0px 6px;
+            display: block;
+            border-radius: 50%;
+            border:solid 1px #59BBFF;
+        }
+        .previous-title{
+            font: 400 1.4rem 'Inter', sans-serif;
+            color: #59BBFF;
+        }
+        .previous-description{
+            margin: 0px 6px;
+            font: 400 1.4rem 'Inter', sans-serif;
+            color: #b3b3b3;
+        }
+    }
+}

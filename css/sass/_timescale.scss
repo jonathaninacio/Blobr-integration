@@ -1,0 +1,67 @@
+@mixin popup-deso($color, $transX, $transY){
+    &:focus{
+        outline: none;
+        z-index: 20;
+        &::after{
+            content: "déso \01F937\Apas d'interaction";
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            white-space: pre;
+            padding:5px;
+            display: block;
+            position:absolute;
+            transform: translate($transX, $transY);
+            color: $color;
+            background-color: white;
+            border-radius:8px;
+            filter : drop-shadow(0px 5px 2px rgba(0,0,0,30%));
+            z-index: 21;
+            animation: no-interact-popup 1.0s forwards;
+        }
+    }
+}
+
+.statistics-container{
+    float: right;
+    height: 100%;
+    min-width: auto;
+    display: block;
+    .statistics-title{
+        font-size: 2.6rem;
+        font-weight: 700;
+        margin: 24px 40px;
+    }
+    .grey-background-container{
+        display: block;
+        background-color: #FBFBFB;
+        border-top: solid 1px #EBEBEB;
+        border-bottom: solid 1px #EBEBEB;
+        .timescale{
+            float: right;
+            margin: 40px 40px 24px 0;
+            .timescale-button{
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                font-size: 1.4rem;
+                border:solid 1px #EBEBEB;
+                background-color: #FFF;
+                padding: 8px 10px;
+                margin-right: -5px;
+                color: #4D4D4D;
+                outline: none;
+                @include popup-deso($sb-bg-bottom, -35%, -170%);
+            }
+            .timescale-button-selected{
+                font-weight: 700;
+                color: #0071F2;
+            }
+            button:first-child{
+                border-radius: 8px 0px 0px 8px;
+            }
+            button:last-child{
+                border-radius: 0px 8px 8px 0px;
+            }
+        }
+    }
+}

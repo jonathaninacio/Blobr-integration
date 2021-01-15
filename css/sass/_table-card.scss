@@ -1,0 +1,60 @@
+.table-card-container{
+    margin-bottom: 40px;
+    .table-card-title{
+        color: #000;
+        margin: 40px;
+        font: 700 2.2rem 'Inter', sans-serif;
+    }
+    .table-card{
+        border-radius: 8px;
+        min-width: 1110px;
+        margin: auto;
+        border: solid 1px #EBEBEB;
+        background-color: #FFF;
+        filter : drop-shadow(0px 4px 4px rgba(0,0,0,5%));
+        .first-line{
+            .date{
+                padding:16px;
+                font: 700 1.4rem 'Inter', sans-serif;
+            }
+            .title{
+                text-align: right;
+                font: 700 1.4rem 'Inter', sans-serif;
+            }
+            .transactions{
+                text-align: center;
+                padding-right: 80px;
+                font: 400 1.2rem 'Inter', sans-serif;
+            }
+        }
+        .new-line{
+
+            .new-date{
+                padding:16px;
+                font: 400 1.4rem 'Inter', sans-serif;
+            }
+            .revenue{
+                text-align: right;
+                font: 700 1.4rem 'Inter', sans-serif;
+            }
+            .new-revenue{
+                text-align: right;
+                font: 400 1.4rem 'Inter', sans-serif;
+            }
+            .transactions{
+                color: #b3b3b3;
+                text-align: center;
+                padding-right: 80px;
+                font: 400 1.2rem 'Inter', sans-serif;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                min-width: 1110px;
+                transform: translate(-1110px,-5px);
+                border-top: solid 1px #EBEBEB;
+                margin: 3px;
+            }
+        }
+    }
+}

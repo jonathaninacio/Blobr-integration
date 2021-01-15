@@ -61,10 +61,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- Statistics -->
+		<!-- Timescale -->
 		<div class="statistics-container">
-
-
 			<div class="statistics-title">Statistics</div>
 			<div class="grey-background-container datefilter-container">
 				<div class="timescale">
@@ -75,7 +73,7 @@
 					<button class="timescale-button">Years</button>
 					<button class="timescale-button">Custom...</button>
 				</div>
-
+				<!-- Scrollbar -->
 				<div class="scrollbar-container">
 					<div class="month-container">
 						<button onclick="fnprevarrow()" class="month-arrow month-prev-arrow">
@@ -308,9 +306,8 @@
 						</button>
 					</div>
 				</div>
-
 			</div>
-
+			<!-- Chart-curve -->
 			<div class="chart-curve-container">
 				<div class="current">
 					<div class="current-dot"></div>
@@ -323,11 +320,41 @@
 					<div class="previous-description">(September 2019)</div>
 				</div>
 			</div>
-
+			<!-- Popup-cards -->
+			<div class="popup-cards-container">
+				<div id="card1" class="container-card container-card-1">
+					<div class="card card-1">
+						<div class="current-date">Tuesday, 1 September 2020</div>
+						<div class="previous-date">Tuesday, 1 September 2019</div>
+						<div class="total">Total:</div>
+						<div class="current-total">€2.00</div>
+						<div class="previous-total">€0.00</div>
+					</div>
+				</div>
+				<div id="card2" class="container-card container-card-2">
+					<div class="card card-2">
+						<div class="current-date">Wednesday, 2 September 2020</div>
+						<div class="previous-date">Wednesday, 2 September 2019</div>
+						<div class="total">Total:</div>
+						<div class="current-total">€1.00</div>
+						<div class="previous-total">€0.00</div>
+					</div>
+				</div>
+				<div id="card3" class="container-card container-card-3">
+					<div class="card card-3">
+						<div class="current-date">Thursday, 3 September 2020</div>
+						<div class="previous-date">Thursday, 3 September 2019</div>
+						<div class="total">Total:</div>
+						<div class="current-total">€3.00</div>
+						<div class="previous-total">€0.00</div>
+					</div>
+				</div>
+			</div>
+			<!-- Chartist -->
 			<div class="chart-container">
 				<div class="ct-chart ct-perfect-fourth"></div>
 			</div>
-
+			<!-- Tri-cards -->
 			<div class="grey-background-container">
 				<div class="tri-cards-container">
 					<div class="tri-cards-title">Statistics</div>
@@ -379,7 +406,7 @@
 						</div>
 					</div>
 				</div>
-
+				<!-- Table-card -->
 				<div class="table-card-container">
 					<div class="table-card-title">Per day</div>
 					<table class="table-card">
@@ -421,16 +448,14 @@
 						</tr>
 					</table>
 				</div>
-
 			</div>
-
-
-
-
 		</div>
 	</div>
+
 	<script language="javascript" type="text/javascript" src="js/chartist.min.js"></script>
 	<script language="javascript" type="text/javascript" src="js/main.js"></script>
+	<script language="javascript" type="text/javascript" src="js/mychart.js"></script>
+	
 </body>
 
 </html>

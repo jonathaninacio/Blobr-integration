@@ -1,0 +1,92 @@
+@mixin hideScrollbar(){
+	&::-webkit-scrollbar {
+	display: none;
+  	}
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.scrollbar-container{
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    .month-container{
+        display: flex;
+        max-width: 1110px;
+        margin: 0px 38px 24px 38px;
+        .month-flex{
+            display: flex;
+            overflow:auto;
+            @include hideScrollbar();
+            button{
+                margin-left: -2px;
+                padding: 10px 20px;
+                background-color: #fff;
+                outline: none;
+                border: solid 1px #ebebeb;
+                &:hover{
+                    background-color: #ebebeb;
+                }
+                &:focus{
+                    @include popup-deso($sb-bg-bottom, -50%, -50%);
+                    &::after{
+                        top:-20px;
+                        left:50%;
+                    }
+                }
+                .month{
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 700;
+                    font-size: 1.4rem;
+                    color: #000;
+                }
+                .month-selected{
+                    color: #0071F2;
+                }
+                .year{
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    color: #4d4d4d;
+                }
+            }
+        }
+        .month-arrow{
+            padding: 0px 15px;
+            border: solid 1px #ebebeb;
+            background-color: #fff;
+            outline:none;
+            color: #4D4D4D;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-stretch: 50%;
+            &:hover{
+                background-color: #ebebeb;
+            }
+        }
+        .month-prev-arrow{
+            #prev-arrow{
+                fill:#000;
+            }
+            margin-right: -2px;
+            border-right: 0;
+            border-bottom-left-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+        .month-next-arrow{
+            svg{
+                transform: rotate(180deg);
+                #next-arrow{
+                    fill: #B3B3B3;
+                }
+            }
+            z-index: 5;
+            margin-left: -2px;
+            border-left: 0;
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+    }
+}
